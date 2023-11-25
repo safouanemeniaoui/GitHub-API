@@ -1,0 +1,108 @@
+@use "./sass/mixin" as *;
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+* {
+  @include boxsizing(border-box);
+}
+
+.container {
+  @include breackpoints(small) {
+    width: 750px;
+  }
+  @include breackpoints(medium) {
+    width: 970px;
+  }
+  @include breackpoints(large) {
+    width: 1170px;
+  }
+  margin: auto;
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
+  form {
+    padding: 10px;
+    background-color: #eee;
+    @include flex-bc(10px, row);
+    @include breackpoints(mobile) {
+      @include flex-bc(10px, column);
+    }
+
+    [type="text"] {
+      flex: 1;
+      padding: 10px 20px;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+      @include breackpoints(mobile) {
+        width: 100%;
+      }
+    }
+    [type="submit"] {
+      flex-basis: 20%;
+      padding: 10px;
+      border: none;
+      background-color: #e91e63;
+      color: white;
+      text-transform: capitalize;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+  .repos-list {
+    padding: 10px;
+    background-color: #dbdbdb;
+    .no-data {
+      text-transform: capitalize;
+      padding: 10px;
+      text-align: center;
+      color: #787878;
+      &.hide {
+        display: none;
+      }
+    }
+    .repo {
+      @include flex-bc(10px, row);
+      @include breackpoints(mobile) {
+        @include flex-bc(10px, column);
+      }
+      background-color: white;
+      padding: 5px 10px;
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+      .repo-title {
+        flex: 1;
+        text-transform: capitalize;
+      }
+      .links {
+        text-align: center;
+        a,
+        span {
+          display: inline-block;
+          text-align: center;
+          font-size: 14px;
+          width: 100px;
+          border-radius: 5px;
+          padding: 5px 10px;
+          text-transform: capitalize;
+          color: white;
+          @include breackpoints(mobile) {
+            margin-top: 5px;
+          }
+        }
+        a {
+          text-decoration: none;
+          background-color: #009688;
+          margin-left: 10px;
+        }
+        span {
+          background-color: #9c27b0;
+        }
+      }
+    }
+  }
+}

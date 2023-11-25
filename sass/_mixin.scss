@@ -1,0 +1,33 @@
+@mixin boxsizing($type) {
+  box-sizing: $type;
+  -webkit-box-sizing: $type;
+  -moz-box-sizing: $type;
+}
+
+@mixin flex-bc($gap, $direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-between;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin breackpoints($point) {
+  @if $point == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if ($point == small) {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if ($point == medium) {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if ($point == large) {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,137 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.container {
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.container form {
+  padding: 10px;
+  background-color: #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 767px) {
+  .container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+}
+.container form [type=text] {
+  flex: 1;
+  padding: 10px 20px;
+  border: none;
+}
+.container form [type=text]:focus {
+  outline: none;
+}
+@media (max-width: 767px) {
+  .container form [type=text] {
+    width: 100%;
+  }
+}
+.container form [type=submit] {
+  flex-basis: 20%;
+  padding: 10px;
+  border: none;
+  background-color: #e91e63;
+  color: white;
+  text-transform: capitalize;
+  font-weight: bold;
+  cursor: pointer;
+}
+.container .repos-list {
+  padding: 10px;
+  background-color: #dbdbdb;
+}
+.container .repos-list .no-data {
+  text-transform: capitalize;
+  padding: 10px;
+  text-align: center;
+  color: #787878;
+}
+.container .repos-list .no-data.hide {
+  display: none;
+}
+.container .repos-list .repo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 5px 10px;
+}
+@media (max-width: 767px) {
+  .container .repos-list .repo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+}
+.container .repos-list .repo:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.container .repos-list .repo .repo-title {
+  flex: 1;
+  text-transform: capitalize;
+}
+.container .repos-list .repo .links {
+  text-align: center;
+}
+.container .repos-list .repo .links a,
+.container .repos-list .repo .links span {
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+  width: 100px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-transform: capitalize;
+  color: white;
+}
+@media (max-width: 767px) {
+  .container .repos-list .repo .links a,
+  .container .repos-list .repo .links span {
+    margin-top: 5px;
+  }
+}
+.container .repos-list .repo .links a {
+  text-decoration: none;
+  background-color: #009688;
+  margin-left: 10px;
+}
+.container .repos-list .repo .links span {
+  background-color: #9c27b0;
+}/*# sourceMappingURL=main.css.map */
